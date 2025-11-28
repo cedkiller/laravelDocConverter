@@ -1,0 +1,48 @@
+STEP 1: TO CREATE A PROJECT TYPE THIS COMMAND IN THE TERMINAL
+
+- composer create-project laravel/laravel client
+
+STEP 2: NEXT STEP IS ALTER THE '.env' ALWAYS CHANGE THIS
+
+- SESSION_DRIVER=databse into SESSION_DRIVER=file
+
+STEP 3: NEXT STEP IS CREATE A MIGRATION TYPE THIS COMMAND IN THE TERMINAL
+
+- php artisan make:migration create_tblname_table
+
+STEP 4: NEXT STEP IS CREATE A MODEL TYPE THIS COMMAND IN THE TERMINAL
+
+- php artisan make:model TblName
+
+STEP 5: NEXT STEP IS CREATE A CONTROLLER TYPE THIS COMMAND IN THE TERMINAL
+
+- php artisan make:controller indexController
+
+STEP 6: ACTIVATE THE STORAGE BY TYPING THIS COMMAND IN THE TERMINAL
+
+- php artisan storage:link
+
+STEP 7: CREATE A PYTHON FILE 'converter.py' AND COPY PASTE THIS CODE 
+
+import sys
+from docx2pdf import convert
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: python convert.py <input_docx> <output_pdf>")
+        sys.exit(1)
+    
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
+    
+    try:
+        convert(input_file, output_file)
+        print(f"Successfully converted {input_file} to {output_file}")
+        sys.exit(0)
+    except Exception as e:
+        print(f"Error converting file: {str(e)}")
+        sys.exit(1)
+
+STEP 8: TO RUN THE APPLICATION TYPE THIS COMMAND IN THE TERMINAL
+
+- php artisan serve
